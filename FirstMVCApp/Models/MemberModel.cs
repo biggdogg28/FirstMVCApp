@@ -11,7 +11,7 @@ namespace FirstMVCApp.Models
 
         public string Title { get; set; }
 
-        public int Position { get; set; }
+        public string Position { get; set; }
 
         public string Description { get; set; }
 

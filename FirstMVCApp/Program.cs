@@ -12,6 +12,8 @@ builder.Services.AddDbContext<ProgrammingClubDataContext>(options => options.Use
 
 builder.Services.AddTransient<ProgrammingClubDataContext, ProgrammingClubDataContext>();
 builder.Services.AddTransient<AnnouncementsRepository, AnnouncementsRepository>();
+builder.Services.AddTransient<MembersRepository, MembersRepository>();
+builder.Services.AddTransient<MembershipTypesRespository, MembershipTypesRespository>();
 
 var app = builder.Build();
 

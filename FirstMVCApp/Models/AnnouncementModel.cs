@@ -17,8 +17,8 @@ namespace FirstMVCApp.Models
         public string Title { get; set; }
 
         [Required(ErrorMessage = "This field is mandatory.")]
-        [StringLength(250, ErrorMessage = "Text field can be 250 characters maximum.")]
-        [MinLength(20, ErrorMessage = "Min Lenght 20.")]
+        [StringLength(250, MinimumLength = 5, ErrorMessage = "Text field must be between 5 and 250 characters.")]
+        
         public string Text { get; set; }
 
         [Required(ErrorMessage = "This field is mandatory.")]

@@ -15,5 +15,24 @@ namespace FirstMVCApp.Repositories
         {
             return _context.MembershipTypes;
         }
+        public void Add(MembershipTypeModel model)
+        {
+            model.IDMembershipType = Guid.NewGuid(); //setam IDul, because it was deleted from the view
+
+            _context.MembershipTypes.Add(model); //adding the model in ORM(ProgrammingClubDataContext) layer
+            _context.SaveChanges(); //commit to database
+        }
+
+        public MembershipTypeModel GetMembershipTypesById(Guid id)
+        {
+            MembershipTypeModel model = _context.MembershipTypes.FirstOrDefault(x => x.IDMembershipType == id);
+            return model;
+        }
+
+        public void Update(MembershipTypeModel model)
+        {
+            _context.MembershipTypes.Update(model);
+            _context.SaveChanges();
+        }
     }
 }
