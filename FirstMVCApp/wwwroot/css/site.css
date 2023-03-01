@@ -16,3 +16,17 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.container-fluid {
+    background-color: lightblue;
+    font-style:italic;
+    font-weight:bold;
+}
+
+.display-4 {
+    border: 5px dashed;
+}
+
+.footer {
+    background-color:greenyellow;
+}

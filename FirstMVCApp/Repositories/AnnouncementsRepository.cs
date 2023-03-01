@@ -38,5 +38,12 @@ namespace FirstMVCApp.Repositories
             _context.Announcements.Update(model);
             _context.SaveChanges();
         }
+
+        public void Delete(Guid id)
+        {
+            AnnouncementModel announcement = GetAnnouncementById(id);
+            _context.Announcements.Remove(announcement);
+            _context.SaveChanges();
+        }
     }
 }

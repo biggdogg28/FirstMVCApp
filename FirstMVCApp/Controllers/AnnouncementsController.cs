@@ -50,5 +50,25 @@ namespace FirstMVCApp.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Delete(Guid id)
+        {
+            AnnouncementModel announcement = _repository.GetAnnouncementById(id);
+            return View("Delete", announcement);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Guid id, IFormCollection collection)
+        {
+            _repository.Delete(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Details(Guid id)
+        {
+            AnnouncementModel announcement = _repository.GetAnnouncementById(id);
+            return View("Details", announcement);
+        }
     }
 }
