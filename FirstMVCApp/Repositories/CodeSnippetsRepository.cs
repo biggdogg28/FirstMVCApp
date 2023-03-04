@@ -28,7 +28,7 @@ namespace FirstMVCApp.Repositories
         public CodeSnippetModel GetCodeSnippetById(Guid id) // get code snippet for a certain ID -> Page Details
         {
             CodeSnippetModel codeSnippet = _context.CodeSnippets.FirstOrDefault(x => x.IDCodeSnippet == id); 
-        return codeSnippet;
+            return codeSnippet;
         }
 
         public void UpdateCodeSnippet(CodeSnippetModel model)

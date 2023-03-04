@@ -34,5 +34,12 @@ namespace FirstMVCApp.Repositories
             _context.MembershipTypes.Update(model);
             _context.SaveChanges();
         }
+
+        public void Delete(Guid id)
+        {
+            MembershipTypeModel membershipType = GetMembershipTypesById(id);
+            _context.MembershipTypes.Remove(membershipType);
+            _context.SaveChanges();
+        }
     }
 }

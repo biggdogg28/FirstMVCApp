@@ -47,5 +47,25 @@ namespace FirstMVCApp.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Delete(Guid id)
+        {
+            MembershipTypeModel membershipType = _repository.GetMembershipTypesById(id);
+            return View("Delete", membershipType);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Guid id, IFormCollection collection)
+        {
+            _repository.Delete(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Details(Guid id)
+        {
+            MembershipTypeModel membershipType = _repository.GetMembershipTypesById(id);
+            return View("Details", membershipType);
+        }
     }
 }

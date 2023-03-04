@@ -25,7 +25,7 @@ namespace FirstMVCApp.Repositories
             _context.SaveChanges(); //commit to database
         }
 
-        public MemberModel GetMembersById(Guid id)
+        public MemberModel GetMemberById(Guid id)
         {
             MemberModel model = _context.Members.FirstOrDefault(x => x.IDMember == id);
             return model;
@@ -34,6 +34,13 @@ namespace FirstMVCApp.Repositories
         public void Update(MemberModel model)
         {
             _context.Members.Update(model);
+            _context.SaveChanges();
+        }
+
+        public void Delete(Guid id)
+        {
+            MemberModel member = GetMemberById(id);
+            _context.Members.Remove(member);
             _context.SaveChanges();
         }
     }

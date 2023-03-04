@@ -34,7 +34,7 @@ namespace FirstMVCApp.Controllers
 
         public IActionResult Edit(Guid id) 
         {
-            MemberModel member = _repository.GetMembersById(id);
+            MemberModel member = _repository.GetMemberById(id);
             return View("Edit", member);
         }
 
@@ -47,5 +47,26 @@ namespace FirstMVCApp.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Delete(Guid id)
+        {
+            MemberModel member = _repository.GetMemberById(id);
+            return View("Delete", member);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Guid id, IFormCollection collection)
+        {
+            _repository.Delete(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Details(Guid id)
+        {
+            MemberModel member = _repository.GetMemberById(id);
+            return View("Details", member);
+        }
+
     }
 }
