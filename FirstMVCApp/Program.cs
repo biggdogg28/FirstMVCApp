@@ -15,6 +15,7 @@ builder.Services.AddTransient<AnnouncementsRepository, AnnouncementsRepository>(
 builder.Services.AddTransient<MembersRepository, MembersRepository>();
 builder.Services.AddTransient<MembershipTypesRespository, MembershipTypesRespository>();
 builder.Services.AddTransient<CodeSnippetsRepository, CodeSnippetsRepository>();
+builder.Services.AddTransient<MembershipsRepository, MembershipsRepository>();
 
 var app = builder.Build();
 

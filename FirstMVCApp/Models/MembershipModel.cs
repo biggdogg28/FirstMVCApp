@@ -7,11 +7,11 @@ namespace FirstMVCApp.Models
     public class MembershipModel
     {
         [Key]
-        public Guid? IDMembership { get; set; }
+        public Guid IDMembership { get; set; }
 
-        public Guid? IDMember { get; set; }
+        public Guid IDMember { get; set; }
 
-        public Guid? IDMembershipType { get; set; }
+        public Guid IDMembershipType { get; set; }
 
         public DateTime StartDate { get; set; }
 

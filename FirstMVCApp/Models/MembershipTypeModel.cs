@@ -5,7 +5,7 @@ namespace FirstMVCApp.Models
     public class MembershipTypeModel
     {
         [Key]
-        public Guid? IDMembershipType { get; set; }
+        public Guid IDMembershipType { get; set; }
         public string Name { get; set; }
 
         public string Description { get; set; }
