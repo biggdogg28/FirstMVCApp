@@ -12,7 +12,7 @@ namespace FirstMVCApp.Controllers
         public CodeSnippetsController(CodeSnippetsRepository codeSnippetsRepository, MembersRepository membersRepository)
         {
             _membersRepository = membersRepository;
-            _codeSnippetsRepository = codeSnippetsRepository;
+            _codeSnippetsRepository = codeSnippetsRepository; 
         }
         // GET: CodeSnippetsController
         public ActionResult Index()

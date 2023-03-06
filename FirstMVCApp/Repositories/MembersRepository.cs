@@ -55,6 +55,17 @@ namespace FirstMVCApp.Repositories
 
                 memberCodeSnippetViewModel.Position = member.Position;
                 memberCodeSnippetViewModel.Title = member.Title;
+                
+                // ToList() is executed on the database directly and it returns everything which is filtered
+
+                // Only at the return is there a .ToList() 
+
+                // difference between IQueryable vs IEnumerable
+                // IQueryable prepares a query but does not execute it on the database
+                // IQueryable is used when there are custom filters >>>>> Vandut de: emag, x, y, z
+                // pret intre: 10000 - 20000
+                // livrare: emag genius
+
                 IQueryable<CodeSnippetModel> memberCodeSnippets = _context.CodeSnippets.Where(x => x.IDMember == memberId);
 
                 foreach (CodeSnippetModel dbCodeSnippet in memberCodeSnippets)

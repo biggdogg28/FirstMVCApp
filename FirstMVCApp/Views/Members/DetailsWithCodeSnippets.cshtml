@@ -38,16 +38,22 @@
 <label asp-for="CodeSnippets" class="control-label">Code Snippets for this member</label>
 @foreach (var item in Model.CodeSnippets)
 {
- <div style="border: 1px solid red;">
-     <p>
+ <div style="border: 1px solid red; border-radius: 5px; padding: 20px">
+        <div style="border: 1px solid blue; border-radius: 5px; padding: 20px">
+         <p>
          @Html.DisplayFor(modelItem => item.Title)
      </p>
-     <p>
-         @Html.DisplayFor(modelItem => item.ContentCode)
-     </p>
-     <p>
-         @Html.DisplayFor(modelItem => item.Revision)
-     </p>
+     </div>
+        <div style ="border: 1px solid purple; border-radius: 5px; padding: 20px">
+            <p>
+                @Html.DisplayFor(modelItem => item.ContentCode)
+            </p>
+        </div>
+        <div style="border: 1px solid green; border-radius: 5px; padding: 20px">
+            <p>
+                @Html.DisplayFor(modelItem => item.Revision)
+            </p>
+        </div>
     </div>
 }
 <p>
